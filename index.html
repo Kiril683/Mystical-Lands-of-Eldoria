@@ -42,14 +42,14 @@
 
           <div class="character-creation">
             <h2>Створи свого персонажа</h2>
-    <div class="input-container">
-        <input type="text" class="gradient-input" placeholder="веди своє ім'я">
-        <div class="input-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
-        </div>
-    </div>
+            <div class="input-container">
+                <input type="text" id="player-name" class="gradient-input" placeholder="Введи своє ім'я">
+                <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </div>
+            </div>
             <div class="input-group">
               <label>Обери свій клас:</label>
               <div class="class-selection">
@@ -107,10 +107,10 @@
               <div class="map-region castle-region" data-region="castle">
                 <span>Кришталева Цитадель</span>
                 <div id="crystal1" class="crystal"></div>
-<div id="crystal2" class="crystal"></div>
-<div id="crystal3" class="crystal"></div>
+                <div id="crystal2" class="crystal"></div>
+                <div id="crystal3" class="crystal"></div>
 
-<div id="citadel" class="citadel hidden"></div>
+                <div id="citadel" class="citadel hidden"></div>
               </div>
             </div>
           </div>
@@ -898,9 +898,6 @@
               <span class="choice-icon return-icon">🔄</span>
               <div class="choice-text">
                 <h3>Розпочати Нову Пригоду</h3>
-
-
-
                 <p>Почати новий квест з іншим персонажем.</p>
               </div>
             </button>
@@ -961,12 +958,12 @@
             startQuestBtn.addEventListener('click', function() {
                 const playerName = playerNameInput.value.trim();
                 if (playerName === "") {
-                    showNotification("Please enter your name before starting the quest.");
+                    showNotification("Будь ласка, введіть своє ім'я перед початком квесту.");
                     return;
                 }
                 
                 if (!gameState.playerClass) {
-                    showNotification("Please select your class before starting the quest.");
+                    showNotification("Будь ласка, оберіть свій клас перед початком квесту.");
                     return;
                 }
                 
@@ -1028,7 +1025,7 @@
             if (!gameState.inventory.includes(item)) {
                 gameState.inventory.push(item);
                 updateInventoryDisplay();
-                showNotification(`Item Acquired: ${item}`);
+                showNotification(`Отримано предмет: ${item}`);
                 saveGameState();
             }
         }
@@ -1039,7 +1036,7 @@
             
             if (gameState.inventory.length === 0) {
                 const emptyItem = document.createElement('li');
-                emptyItem.textContent = 'Empty';
+                emptyItem.textContent = 'Порожньо';
                 inventoryList.appendChild(emptyItem);
             } else {
                 gameState.inventory.forEach(item => {
@@ -1080,21 +1077,9 @@
                 updateInventoryDisplay();
             }
         }
-        localStorage.removeItem("inventory"); // або
-localStorage.clear(); // якщо хочеш очистити все
+        
         // Initialize the game
-                document.addEventListener('DOMContentLoaded', function() {
-            // Now it's safe to access DOM elements
-            const inputElement = document.getElementById('gradientInput');
-            
-            // Example of using the input (optional)
-            if (inputElement) {
-                inputElement.addEventListener('input', function() {
-                    console.log('Input value:', this.value);
-                });
-            }
-        });
-        initGame();
+        document.addEventListener('DOMContentLoaded', initGame);
     </script>
   </body>
 </html>

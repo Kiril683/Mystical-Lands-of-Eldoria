@@ -42,32 +42,14 @@
 
           <div class="character-creation">
             <h2>Створи свого персонажа</h2>
-
-            <div class="input-group">
-              <label for="player-name">Твоє ім'я:</label>
-              <div class="fancy-input-container">
-                <svg
-                  class="fancy-input-icon"
-                  viewbox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="none"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M60.7,53.6,50,64.3m0,0L39.3,53.6M50,64.3V35.7m0,46.4A32.1,32.1,0,1,1,82.1,50,32.1,32.1,0,0,1,50,82.1Z"
-                  />
-                </svg>
-                <input
-                  type="text"
-                  id="player-name"
-                  placeholder="Ведіть своє ім'я"
-                  class="fancy-input-field"
-                />
-              </div>
-            </div>
-
+    <div class="input-container">
+        <input type="text" class="gradient-input" placeholder="веди своє ім'я">
+        <div class="input-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </div>
             <div class="input-group">
               <label>Обери свій клас:</label>
               <div class="class-selection">
@@ -946,5 +928,5 @@
     </div>
 
     <div id="notification" class="notification"></div>
-      </body>
+  </body>
 </html>

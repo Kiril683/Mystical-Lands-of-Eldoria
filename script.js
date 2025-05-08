@@ -151,6 +151,16 @@
         }
         localStorage.removeItem("inventory"); // або
 localStorage.clear(); // якщо хочеш очистити все
-
         // Initialize the game
+                document.addEventListener('DOMContentLoaded', function() {
+            // Now it's safe to access DOM elements
+            const inputElement = document.getElementById('gradientInput');
+            
+            // Example of using the input (optional)
+            if (inputElement) {
+                inputElement.addEventListener('input', function() {
+                    console.log('Input value:', this.value);
+                });
+            }
+        });
         initGame();
